@@ -54,3 +54,36 @@ curl -k -v -XGET  \
 ```
 
 这次就可以访问成功了。
+
+如果需要创建资源，需要将 YAML 转换成相应的 JSON：
+
+```bash
+cat > nginx-pod.json <<EOF
+{
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+        "name": "nginx1"
+    },
+    "spec": {
+        "containers": [
+            {
+                "name": "nginx",
+                "image": "nginx:1.7.9",
+                "ports": [
+                    {
+                        "containerPort": 80
+                    }
+                ]
+            }
+        ]
+    }
+}
+EOF
+
+curl -k -v -X POST \
+	-H "Authorization: Bearer ${token}" \
+	-H "Content-Type: application/json" \
+	https://localhost:6443/api/v1/namespaces/default/pods \
+	-d@nginx-pod.json
+```
