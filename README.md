@@ -5,3 +5,5 @@
 * [Scripts](https://github.com/leopeng1995/kubernetes-notes/blob/master/scripts.md)：这里记录了一些平时使用的工具脚本。
 * [API](https://github.com/leopeng1995/kubernetes-notes/blob/master/api.md)：这里记录了 Kubernetes API 。
 * [Informer](https://github.com/leopeng1995/kubernetes-notes/blob/master/informer.md)：这里记录了Kubernetes Informer。
+* [HPA (Horizontal Pod Autoscaler)](https://github.com/leopeng1995/kubernetes-notes/blob/master/hpa.md)：HPA Quicckstart。
+
